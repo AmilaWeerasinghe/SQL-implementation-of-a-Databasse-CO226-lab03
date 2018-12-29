@@ -1,0 +1,78 @@
+
+
+/*.......*********REQUIRED COMMANDS ARE DISPALYD UNDER COMMENTS...************/
+
+-- Database: `e15385`
+-- Table structure for table `customer`
+--
+/*......................*******************................CREATING THE CUSTOMER TABLE.......*******************...................................................*/
+CREATE TABLE `customer` (
+  `CustomerID` int(11) NOT NULL,
+  `FirstName` varchar(20) NOT NULL,
+  `LastName` varchar(20) NOT NULL,
+  `ADDRESS1` varchar(20) NOT NULL,
+  `Address2` varchar(20) NOT NULL,
+  `Address3` varchar(20) NOT NULL,
+  `ItemID` int(11) NOT NULL,
+  `Comments` varchar(200) DEFAULT NULL
+) 
+
+
+/*........................................+***************..........INSERT VALUES INTO CUSTOMER TABLE......*****************............................*/
+INSERT INTO `customer` (`CustomerID`, `FirstName`, `LastName`, `ADDRESS1`, `Address2`, `Address3`, `ItemID`, `Comments`) VALUES
+(100, 'John', 'Cena', '166/2', 'Hulangamuwa', 'Matale', 10, 'Deliver on time'),
+(200, 'Amila', 'Weerasinghe', '166/2', 'Hulangamuwa', 'Matale', 15, 'Deliver best'),
+(203, 'Brock', 'Lesnar', '2450', 'California', 'USA', 14, 'Deliver quickly as possible');
+
+
+
+--
+-- Table structure for table `item`
+--
+/*.........................***********.......................CREATING THE ITEM TABLE................************..............................*/
+
+
+CREATE TABLE `item` (
+  `ItemID` int(11) NOT NULL,
+  `Colour` varchar(10) NOT NULL,
+  `Size` varchar(10) NOT NULL,
+  `ItemName` varchar(10) NOT NULL,
+  `ExtraItem` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+/*.........................****************.........................INSERT VALUES INTI ITEM TABLE........*************............................................*/
+INSERT INTO `item` (`ItemID`, `Colour`, `Size`, `ItemName`, `ExtraItem`) VALUES
+(10, 'Red', 'Small', 'Shirt', 'Cap');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`CustomerID`);
+
+--
+-- Indexes for table `item`
+--
+ALTER TABLE `item`
+  ADD PRIMARY KEY (`ItemID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+
+
+
+*/...............*************...CODE TO UPDATE VALUES.........***********...............................*/
+
+
+UPDATE `customer` SET `ADDRESS1` = '24500', `ItemID` = '16' WHERE `customer`.`CustomerID` = 203;
+UPDATE `item` SET `Colour` = 'Blue', `Size` = 'Medium' WHERE `customer`.`ItemID` = 10;
